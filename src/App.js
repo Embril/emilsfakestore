@@ -8,6 +8,7 @@ import Footer from './Component/Footer';
 import Register from './Component/Register';
 import Login from './Component/Login';
 import Cart from './Component/Cart';
+import About from './Component/About';
 import "../src/Styles/styles.js"
 
 
@@ -22,6 +23,7 @@ function App() {
       <Route exact path="/register" component={Register}/>
       <Route exact path="/login" component={Login}/>
       <Route exact path="/cart" component={Cart}/>
+      <Route exact path="/about" component={About}/>
     </Switch>
     <Footer/>
     </>

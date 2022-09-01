@@ -7,7 +7,12 @@ const Footer = () => {
       <div class="footer-left col-md-4 col-sm-6">
         <p class="about">
           <span> About the company</span>
-          Litt om selskapet
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
+            explicabo, omnis error exercitationem architecto enim. Eligendi
+            corporis impedit dolor voluptates ab temporibus, dolorum quas totam
+            quia, unde aliquam ipsum corrupti.
+          </p>
         </p>
       </div>
       <div class="footer-center col-md-4 col-sm-6">
@@ -50,8 +55,12 @@ const Footer = () => {
           </NavLink>
 
           <NavLink className="nav-link px-1" to="/Cart" exact>
-            Cart
+            Cart |
           </NavLink>
+
+          <a className="nav-link" onClick={() => window.scrollTo(0, 0)}>
+            Back to top
+          </a>
         </p>
       </div>
     </footer>
