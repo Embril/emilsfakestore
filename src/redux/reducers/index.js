@@ -1,7 +1,7 @@
-import handleCart from "./handleCart";
+import processedRequest from "./handleActions";
 
 import {combineReducers} from "redux"
 
 const rootReducers = combineReducers( {
-    handleCart,
+    handleActions: processedRequest,
 }); export default rootReducers;

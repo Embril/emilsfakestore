@@ -8,6 +8,7 @@ import Footer from './Component/Footer';
 import Register from './Component/Register';
 import Login from './Component/Login';
 import Cart from './Component/Cart';
+import "../src/Styles/styles.js"
 
 
 function App() {

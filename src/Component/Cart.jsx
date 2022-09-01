@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 const Cart = () => {
   const [loading, setLoading] = useState(false)
+  const [showCheckOut, setShowCheckOut] = useState(false)
 
-  const state = useSelector((state) => state.handleCart)
+  const state = useSelector((state) => state.handleActions)
 
   let product = state[0]
 
@@ -51,20 +53,38 @@ const Cart = () => {
             src="https://htmlcolorcodes.com/assets/images/colors/turquoise-color-solid-background-1920x1080.png"
             className="card-img"
             alt="background"
-            height="120%px"
+            height="120%"
           />
           <div className="card-img-overlay d-flex flex-column justify-content-center">
             <div className="container">
-              <h5 className="card-title display-3 fw-bolder mb-0">
-                YOUR PRODUCTS
-              </h5>
+              <h5 className="card-title display-3 fw-bolder mb-0">YOUR CART</h5>
               <div>
                 <div>
                   <div className="container py-5">
                     <div className="row py-4">
                       {loading ? <Loading /> : <ShowProduct />}
                     </div>
-                    <div>{Sum}</div>
+
+                    {Sum[0] !== 0 ? (
+                      <div>
+                        <h2>Total sum of products</h2>
+                        <h3>${Sum}</h3>
+                        <br />
+                        <br />
+                        <button to="/products" className="btn btn-outline-dark">
+                          <i className="fa "></i> CHECKOUT
+                        </button>
+                      </div>
+                    ) : (
+                      <div>
+                        <h2>Your cart is empty! Start shopping!</h2>
+                        <br />
+                        <br />
+                        <Link to="/products" className="btn btn-outline-dark">
+                          <i className="fa "></i> START SHOPPING
+                        </Link>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>

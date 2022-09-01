@@ -5,15 +5,22 @@ import { useState } from 'react'
 import Cart from './Cart'
 
 const Navbar = () => {
-  const state = useSelector((state) => state.handleCart)
+  const state = useSelector((state) => state.handleActions)
 
   //bg-light for darker navbar
   return (
     <div>
+      {state.loginSuccess && state.userDisplayName && (
+        <span style={{ color: 'green' }}>Hi, {state.userDisplayName}</span>
+      )}
       <nav className="navbar navbar-expand-lg display bg-light py-3 shadow-sm">
         <div className="container">
           <NavLink className="navbar-brand fw-bold fs-4" to="/">
-            FAKESTORE API
+            <img
+              src="https://fakestoreapi.com/icons/logo.png"
+              alt="Fakestore"
+              height={'50px'}
+            />
           </NavLink>
           <button
             className="navbar-toggler"
@@ -49,6 +56,12 @@ const Navbar = () => {
                 </a>
               </li>
             </ul>
+
+            {state.loginSuccess && state.userDisplayName && (
+              <span style={{ color: 'green' }}>
+                Hi, {state.userDisplayName}
+              </span>
+            )}
             <div className="buttons">
               <NavLink to="/login" className="btn btn-outline-dark">
                 <i className="fa fa-sign-in me-1 "></i> Login

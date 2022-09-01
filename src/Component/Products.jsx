@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from 'react'
 import Skeleton from 'react-loading-skeleton'
 import { NavLink } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { addCart } from '../redux/action'
 
 const Products = () => {
   const [data, setData] = useState([])
   const [filter, setFilter] = useState(data)
   const [loading, setLoading] = useState(false)
+
+  const dispatch = useDispatch()
+  const addProduct = (product) => {
+    dispatch(addCart(product))
+  }
+
   let componentMounted = true
 
   useEffect(() => {
@@ -57,7 +65,7 @@ const Products = () => {
             className="btn btn-outline-dark me-2"
             onClick={() => setFilter(data)}
           >
-            All
+            All products
           </button>
           <button
             className="btn btn-outline-dark me-2"
@@ -105,8 +113,15 @@ const Products = () => {
                       to={`products/${product.id}`}
                       className="btn bn-outline-dark"
                     >
-                      Buy Now
+                      Product details
                     </NavLink>
+
+                    <div
+                      className="btn bn-outline-dark"
+                      onClick={() => addProduct(product)}
+                    >
+                      Add to cart
+                    </div>
                   </div>
                 </div>
               </div>

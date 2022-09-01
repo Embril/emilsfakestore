@@ -1,7 +1,8 @@
 const cart = [];
 
-const handleCart = (state = cart, action) => {
+const processedRequest = (state = cart, action) => {
     const product = action.payload;
+    debugger;
     switch (action.type) {
         case "ADDITEM":
             //first check if prod is in cart
@@ -29,10 +30,34 @@ const handleCart = (state = cart, action) => {
                     );
                 }
                 break;
-    
+
+                case "AUTHENTICATE":
+                        console.log(action.payload);
+                    break;
+
+                case "AUTHENTICATE_FAILED":
+                    let errorMessage =  action.payload;
+                    return {
+                            ...state,
+                            errorMessage: errorMessage,
+                            loginSuccess: false,
+                            userDisplayName: null
+                        };
+                    break;
+                case "AUTHENTICATE_SUCCESS":
+                    let userDisplayName =  action.payload;
+                    return {
+                            ...state,
+                            errorMessage: null,
+                            loginSuccess: true,
+                            userDisplayName: userDisplayName
+                        };
+                    break;
         default:
             return state;
             break;
     }
 }
-export default handleCart
+export default processedRequest
+
+

@@ -13,3 +13,19 @@ export const delCart = (product) => {
         payload: product
     }
 }
+
+
+export const authenticateFailed = (errorMessage) => {
+    return {
+        type: "AUTHENTICATE_FAILED",
+        payload: errorMessage
+    }
+}
+
+
+export const authenticateSuccess = (userDisplayName) => {
+    return {
+        type: "AUTHENTICATE_SUCCESS",
+        payload: userDisplayName
+    }
+}
