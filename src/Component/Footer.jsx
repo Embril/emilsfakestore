@@ -37,24 +37,20 @@ const Footer = () => {
           />
         </h2>
         <p class="menu">
-          <NavLink className="nav-link" to="/" exact>
-            | Home
+          <NavLink className="nav-link px-1" to="/" exact>
+            Home |
           </NavLink>
 
-          <NavLink className="nav-link" to="/products" exact>
-            | Pruducts
+          <NavLink className="nav-link px-1" to="/products" exact>
+            Pruducts |
           </NavLink>
 
-          <NavLink className="nav-link" to="/about" exact>
-            | About
+          <NavLink className="nav-link px-1" to="/about" exact>
+            About |
           </NavLink>
 
-          <NavLink className="nav-link" to="/cart" exact>
-            | Contact
-          </NavLink>
-
-          <NavLink className="nav-link" to="/Cart" exact>
-            | Cart
+          <NavLink className="nav-link px-1" to="/Cart" exact>
+            Cart
           </NavLink>
         </p>
       </div>

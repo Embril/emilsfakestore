@@ -1,4 +1,11 @@
+/* SASS VARIABLES */
 
+$FotAndHeadColor: #f2f4f7;
+$textColor: #363333;
+$footerFont: sans-serif;
+$footerFontWeight: bold;
+$footerBlue: #0099ff;
+$footerWhite: #ffffff;
 
 /* NavBar */
 
@@ -15,11 +22,11 @@ a {
   /* footer */
   
   .footer {
-    background-color: #ecf1fd;
+    background-color: $FotAndHeadColor;
     width: 100%;
     text-align: left;
-    font-family: sans-serif;
-    font-weight: bold;
+    font-family: $footerFont;
+    font-weight: $footerFontWeight;
     font-size: 16px;
     padding: 50px;
     /* margin-top: 50px; */
@@ -43,7 +50,7 @@ a {
   
   .footer .about {
     line-height: 20px;
-    color: #363333;
+    color: $textColor;
     font-size: 13px;
     font-weight: normal;
     margin: 0;
@@ -51,9 +58,9 @@ a {
   
   .footer .about span {
     display: block;
-    color: #363333;
+    color: $textColor;
     font-size: 14px;
-    font-weight: bold;
+    font-weight: $footerFontWeight;
     margin-bottom: 20px;
   }
   
@@ -66,10 +73,10 @@ a {
     width: 35px;
     height: 35px;
     cursor: pointer;
-    background-color: #363333;
+    background-color: $textColor;
     border-radius: 2px;
     font-size: 20px;
-    color: #ffffff;
+    color: $footerWhite;
     text-align: center;
     line-height: 35px;
     margin-right: 3px;
@@ -83,8 +90,8 @@ a {
   }
   
   .footer .footer-center i {
-    background-color: #33383b;
-    color: #ffffff;
+    background-color: $textColor;
+    color: $footerWhite;
     font-size: 25px;
     width: 38px;
     height: 38px;
@@ -102,7 +109,7 @@ a {
   
   .footer .footer-center p {
     display: inline-block;
-    color: #363333;
+    color: $textColor;
     vertical-align: middle;
     margin: 0;
   }
@@ -115,7 +122,7 @@ a {
   }
   
   .footer .footer-center p a {
-    color: #0099ff;
+    color: $footerBlue;
     text-decoration: none;
   }
   
@@ -126,18 +133,18 @@ a {
   }
   
   .footer h2 {
-    color: #363333;
+    color: $footerBlue;
     font-size: 36px;
     font-weight: normal;
     margin: 0;
   }
   
   .footer h2 span {
-    color: #0099ff;
+    color: $footerBlue;
   }
   
   .footer .menu {
-    color: #363333;
+    color: $footerBlue;
     margin: 20px 0 12px;
     padding: 0;
   }
@@ -150,11 +157,11 @@ a {
   }
   
   .footer .menu a:hover {
-    color: #0099ff;
+    color: $footerBlue;
   }
   
   .footer .name {
-    color: #0099ff;
+    color: $footerBlue;
     font-size: 14px;
     font-weight: normal;
     margin: 0;

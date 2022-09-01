@@ -10,9 +10,6 @@ const Navbar = () => {
   //bg-light for darker navbar
   return (
     <div>
-      {state.loginSuccess && state.userDisplayName && (
-        <span style={{ color: 'green' }}>Hi, {state.userDisplayName}</span>
-      )}
       <nav className="navbar navbar-expand-lg display bg-light py-3 shadow-sm">
         <div className="container">
           <NavLink className="navbar-brand fw-bold fs-4" to="/">
@@ -51,29 +48,34 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" to="/contact">
+                <a
+                  className="nav-link"
+                  onClick={() => window.scrollTo(0, document.body.scrollHeight)}
+                >
                   Contact
                 </a>
               </li>
             </ul>
 
-            {state.loginSuccess && state.userDisplayName && (
-              <span style={{ color: 'green' }}>
-                Hi, {state.userDisplayName}
-              </span>
-            )}
-            <div className="buttons">
-              <NavLink to="/login" className="btn btn-outline-dark">
-                <i className="fa fa-sign-in me-1 "></i> Login
-              </NavLink>
-              <NavLink to="/register" className="btn btn-outline-dark ms-2">
-                <i className="fa fa-user-plus me-1"></i> Register
-              </NavLink>
+            {!state.loginSuccess && !state.userDIsplayName ? (
+              <div className="buttons">
+                <NavLink to="/login" className="btn btn-outline-dark">
+                  <i className="fa fa-sign-in me-1 "></i> Login
+                </NavLink>
+                <NavLink to="/register" className="btn btn-outline-dark ms-2">
+                  <i className="fa fa-user-plus me-1"></i> Register
+                </NavLink>
+                <NavLink to="/cart" className="btn btn-outline-dark ms-2">
+                  <i className="fa fa-shopping-cart me-1"></i> Cart (
+                  {state.length})
+                </NavLink>
+              </div>
+            ) : (
               <NavLink to="/cart" className="btn btn-outline-dark ms-2">
                 <i className="fa fa-shopping-cart me-1"></i> Cart (
                 {state.length})
               </NavLink>
-            </div>
+            )}
           </div>
         </div>
       </nav>
