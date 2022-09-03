@@ -4,11 +4,11 @@ import { useState } from 'react'
 const Register = () => {
   return (
     <div>
-      <section className="h-100 bg-white">
-        <div className="container py-5 h-100">
-          <div className="row d-flex justify-content-center align-items-center h-100">
+      <section className="section">
+        <div className="Rcontainer py-5 h-100">
+          <div className="row d-flex justify-content-center align-items-center h-100 m-6">
             <div className="col">
-              <div className="card card-registration my-4">
+              <div className="card card-registration my-4 ">
                 <div className="row g-0">
                   <div className="col-xl-6 d-none d-xl-block ">
                     <img

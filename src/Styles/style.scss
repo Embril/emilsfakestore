@@ -213,4 +213,21 @@ a {
       height: 100%;
       }
       }
+
+
+      /* register */
+
+      $whiteBG: white;
+
+      $Height100: "100%";
+
+      .section {
+        background-color: $whiteBG;
+        height: $Height100;
+      }
+
+      .Rcontainer {
+        height: $Height100;
+        
+      }
   

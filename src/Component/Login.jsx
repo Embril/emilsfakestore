@@ -16,13 +16,13 @@ const Login = () => {
 
   const authenticate = async () => {
     try {
-      // const response = await fetch('https://fakestoreapi.com/auth/login', {
-      //   method: 'POST',
-      //   body: JSON.stringify({
-      //     username: userName,
-      //     password: password,
-      //   }),
-      // })
+      const response = await fetch('https://fakestoreapi.com/auth/login', {
+        method: 'POST',
+        body: JSON.stringify({
+          username: userName,
+          password: password,
+        }),
+      })
       if (userName == 'emil' && password == 'emil')
         dispatch(authenticateSuccess('Emil'))
       else dispatch(authenticateFailed('Wrong Password'))

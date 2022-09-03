@@ -1,14 +1,17 @@
-import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { delCart } from '../redux/action'
 
 const Cart = () => {
   const [loading, setLoading] = useState(false)
-  const [showCheckOut, setShowCheckOut] = useState(false)
 
   const state = useSelector((state) => state.handleActions)
 
-  let product = state[0]
+  const dispatch = useDispatch()
+  const delProduct = (product) => {
+    dispatch(delCart(product))
+  }
 
   const ShowProduct = () => {
     let productCard = state.map((product) => (
@@ -28,6 +31,14 @@ const Cart = () => {
               <p class="card-text lead fw-bold" style={{ color: 'black' }}>
                 ${product.price}
               </p>
+
+              <button
+                to="/products"
+                className="btn btn-outline-dark"
+                onClick={() => delProduct(product)}
+              >
+                <i className="fa "></i> Remove from cart
+              </button>
             </div>
           </div>
         </div>
