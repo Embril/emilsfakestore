@@ -12,7 +12,7 @@ const Register = () => {
                 <div className="row g-0">
                   <div className="col-xl-6 d-none d-xl-block ">
                     <img
-                      src="/assets/ragister.jpg"
+                      src="https://mandalaybay.mgmresorts.com/content/dam/MGM/mandalay-bay/retail/mandalay-bay-retail-resort-shops-shopping-bags.tif"
                       alt="Sample photo"
                       className="img-fluid"
                     />

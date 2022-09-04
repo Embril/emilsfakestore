@@ -3,16 +3,16 @@ import React from 'react'
 const About = () => {
   return (
     <>
-      <div class="card text-bg-dark">
+      <div className="card text-bg-dark">
         <img
           src="https://media.istockphoto.com/photos/about-web-banner-the-word-about-built-from-letters-on-wooden-cubes-picture-id1335204621?b=1&k=20&m=1335204621&s=170667a&w=0&h=4Ttl3LHvYqyEGYLXEMDqyAY7CV8zhR2SlVS3f_W3SFw="
-          class="card-img"
+          className="card-img"
           alt="..."
           height={'1200px'}
         />
-        <div class="card-img-overlay">
-          <h5 class="card-title">ABOUT FAKESTORE</h5>
-          <p class="card-text">
+        <div className="card-img-overlay">
+          <h5 className="card-title">ABOUT FAKESTORE</h5>
+          <p className="card-text">
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos,
               voluptatum harum consectetur facere mollitia omnis accusamus
@@ -20,7 +20,7 @@ const About = () => {
               explicabo totam error magni vero. Quasi, dolore!
             </p>
           </p>
-          <p class="card-text">
+          <p className="card-text">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut esse
               exercitationem ab maiores qui neque. Natus fuga ducimus nesciunt
@@ -37,13 +37,13 @@ const About = () => {
               eligendi veniam?
             </p>
           </p>
-          <p class="card-text">
+          <p className="card-text">
             Fakestore was started in 1995 when Tom Cruise noticed a shortage in
             the study of trends in products. Since then, Fakestore has thrived
             to understand the consumers minds.
           </p>
 
-          <p class="card-text">HAPPY SHOPPING!</p>
+          <p className="card-text">HAPPY SHOPPING!</p>
         </div>
       </div>
     </>

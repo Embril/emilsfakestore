@@ -16,7 +16,7 @@ const Navbar = () => {
             <img
               src="https://fakestoreapi.com/icons/logo.png"
               alt="Fakestore"
-              height={'50px'}
+              height={'40px'}
             />
           </NavLink>
           <button

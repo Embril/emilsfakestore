@@ -46,7 +46,7 @@ const Product = () => {
     return (
       <div>
         <div className="prodFlex d-flex flex-column justify-content-center">
-          <div class="row d-flex justify-content-center">
+          <div className="row d-flex justify-content-center">
             <div className="col-md-6">
               <img
                 src={product.image}

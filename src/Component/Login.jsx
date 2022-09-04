@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux/es/exports'
 import { authenticateFailed, authenticateSuccess } from '../redux/action'
 import { useSelector } from 'react-redux/es/hooks/useSelector'
+import jQuery from 'jquery'
 
 const Login = () => {
   const [userName, setUserName] = useState()
@@ -31,7 +32,18 @@ const Login = () => {
       dispatch(authenticateFailed('Wrong Password'))
     }
   }
-  console.log(state)
+
+  // function authenticate() {
+  //   let jqxhr = jQuery
+  //     .post('https://fakestoreapi.com/auth/login', {
+  //       userName: userName,
+  //       password: password,
+  //     })
+  //     .done(function (jqxhr) {
+  //       console.log(jqxhr)
+  //     })
+  // }
+
   return (
     <div>
       <section className="vh-100">

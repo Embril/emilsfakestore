@@ -2,7 +2,6 @@ const cart = [];
 
 const processedRequest = (state = cart, action) => {
     const product = action.payload;
-    debugger;
     switch (action.type) {
         case "ADDITEM":
             //first check if prod is in cart
