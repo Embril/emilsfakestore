@@ -11,6 +11,7 @@ const Login = () => {
   const [password, setPassword] = useState()
   const [isAuthenticated, setIsAuthenticated] = useState()
   const [failedAuthentication, setFailedAuthentication] = useState()
+  const [success, setSuccess] = useState()
   const state = useSelector((state) => state.handleActions)
 
   const dispatch = useDispatch()
@@ -33,8 +34,11 @@ const Login = () => {
           password: password,
         }),
       })
-      if (response) dispatch(authenticateSuccess(userName))
-      else dispatch(authenticateFailed('Wrong Username or Password'))
+
+      setSuccess(await response.json())
+      if (success) {
+        dispatch(authenticateFailed('Wrong Username or Password'))
+      } else dispatch(authenticateSuccess(userName))
     } catch (error) {
       console.warn(error)
       dispatch(authenticateFailed('Wrong Username or Password'))
