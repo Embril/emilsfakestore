@@ -30,10 +30,6 @@ const processedRequest = (state = cart, action) => {
                 }
                 break;
 
-                case "AUTHENTICATE":
-                        console.log(action.payload);
-                    break;
-
                 case "AUTHENTICATE_FAILED":
                     let errorMessage =  action.payload;
                     return {
@@ -43,6 +39,7 @@ const processedRequest = (state = cart, action) => {
                             userDisplayName: null
                         };
                     break;
+
                 case "AUTHENTICATE_SUCCESS":
                     let userDisplayName =  action.payload;
                     return {

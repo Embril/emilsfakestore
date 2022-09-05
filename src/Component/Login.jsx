@@ -9,9 +9,6 @@ import jQuery from 'jquery'
 const Login = () => {
   const [userName, setUserName] = useState()
   const [password, setPassword] = useState()
-  const [isAuthenticated, setIsAuthenticated] = useState()
-  const [failedAuthentication, setFailedAuthentication] = useState()
-  const [success, setSuccess] = useState()
   const state = useSelector((state) => state.handleActions)
 
   const dispatch = useDispatch()
@@ -34,11 +31,12 @@ const Login = () => {
           password: password,
         }),
       })
+      var token = (await response.json()).token
+      console.log(token)
 
-      setSuccess(await response.json())
-      if (success) {
-        dispatch(authenticateFailed('Wrong Username or Password'))
-      } else dispatch(authenticateSuccess(userName))
+      if (token) {
+        dispatch(authenticateSuccess(userName))
+      } else dispatch(authenticateFailed('Wrong Username or Password'))
     } catch (error) {
       console.warn(error)
       dispatch(authenticateFailed('Wrong Username or Password'))
